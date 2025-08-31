@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Reel Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Reel Downloader</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" action="/download" class="download-form" id="downloadForm">
+            <input type="url" name="url" placeholder="Paste Instagram Reel URL here" required>
+            <button type="submit" id="downloadBtn">
+                <span id="btnText" >Download Now</span>
+                <span id="btnLoading" style="display: none; color: #000000;"  ">Downloading...</span>
+            </button>
+        </form>
+        
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Open Instagram and copy the Reel URL</li>
+                <li>Paste the URL in the input field above</li>
+                <li>Click Download - video will save directly to your device</li>
+                <li>No files are stored on our server</li>
+            </ol>
+        </div>
+
+        <!-- Buy Me a Coffee Button -->
+        <div class="coffee-section">
+            <p>If you find this tool helpful, consider buying me a coffee! ☕</p>
+            <a href="https://buymeacoffee.com/lokeshkashyap" target="_blank" class="coffee-btn">
+                <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('downloadForm').addEventListener('submit', function() {
+            const btn = document.getElementById('downloadBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoading = document.getElementById('btnLoading');
+            
+            btn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            
+            // Re-enable button after 10 seconds in case download fails
+            setTimeout(() => {
+                btn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }, 10000);
+        });
+    </script>
+</body>
+</html>

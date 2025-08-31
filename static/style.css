@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.download-form {
+    margin: 30px 0;
+}
+
+input[type="url"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input[type="url"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #5a67d8;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.alert-success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #059669;
+}
+
+.back-btn {
+    color: #667eea;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.instructions {
+    text-align: left;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 8px;
+}
+
+.instructions h3 {
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    color: #718096;
+}
+/* Existing styles remain the same */
+
+/* Buy Me a Coffee Styles */
+.coffee-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.coffee-section p {
+    margin-bottom: 15px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.coffee-btn {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.coffee-btn:hover {
+    transform: scale(1.05);
+}
+
+.coffee-btn img {
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+}
+
+/* Responsive design for coffee button */
+@media (max-width: 480px) {
+    .coffee-btn img {
+        height: 35px;
+    }
+    
+    .coffee-section p {
+        font-size: 13px;
+    }
+} 
